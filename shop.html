@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Sharlet Lifestyle</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="shop">
+<nav class="navbar">
+    <div class="nav-top">
+        <div class="logo">
+            Sharlet <span>Lifestyle</span>
+        </div>
+
+        <div class="nav-center">
+            <input type="text" placeholder="Search..." class="search-bar">
+        </div>
+
+        <div class="nav-icons">
+            <a href="cart.html" class="cart-icon">🛒</a>
+            <a href="#" class="profile-icon">👤</a>
+        </div>
+    </div>
+
+    <div class="nav-bottom">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sale.html">Sale!!!</a></li>
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="main-content category-page">
+
+    <section class="shop-header">
+        <h1>All Products</h1>
+        <p>Browse our full thrift collection</p>
+    </section>
+
+    <section class="products-grid" id="productGrid"></section>
+
+</main>
+
+
+<footer class="footer">
+    <p class="footer-bottom">
+        © 2025 Sharlet Lifestyle. All rights reserved.
+    </p>
+</footer>
+<div class="auth-modal" id="authModal">
+  <div class="auth-box">
+    <button class="auth-close" id="closeAuth">&times;</button>
+
+    <h2 id="authTitle">Login</h2>
+
+    <form id="authForm">
+      <input type="email" id="authEmail" placeholder="Email address" required>
+      <input type="password" id="authPassword" placeholder="Password" required>
+
+      <button type="submit" class="auth-btn">Login</button>
+    </form>
+
+    <p class="auth-switch">
+      Don’t have an account?
+      <span id="switchAuth">Register</span>
+    </p>
+  </div>
+</div>
+<script src="products.js"></script>
+<script src="shop.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
