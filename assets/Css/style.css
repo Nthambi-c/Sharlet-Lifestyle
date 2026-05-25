@@ -677,3 +677,49 @@ html, body {
     background: #042002;
   }
 }
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f4f4f2; 
+    margin: 0;
+    padding: 0;
+}
+
+
+.info-card {
+    background: #ffffff;           
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+}
+
+
+body > .info-card {
+    display: inline-block;         
+    width: calc(50% - 30px);        
+    margin: 15px;                    
+    vertical-align: top;
+}
+
+/
+.info-card h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #022b14;
+}
+
+
+.info-card p {
+    line-height: 1.8;
+    font-size: 15px;
+    color: #333;
+}
+
+
+@media (max-width: 800px) {
+    body > .info-card {
+        width: 100%;                  
+        margin: 15px 0;
+    }
+}
