@@ -1,46 +1,55 @@
 document.addEventListener("DOMContentLoaded",() => {
 
-
   const profileToggle = document.getElementById("profileToggle");
-  const authModal = document.getElementById("authModal");
-  const closeAuth = document.getElementById("closeAuth");
-  const switchAuth = document.getElementById("switchAuth");
-  const authTitle = document.getElementById("authTitle");
-  const authForm = document.getElementById("authForm");
-  const authBtn = authForm?.querySelector("button");
+const authModal = document.getElementById("authModal");
+const closeAuth = document.getElementById("closeAuth");
+const switchAuth = document.getElementById("switchAuth");
+const authTitle = document.getElementById("authTitle");
+const authForm = document.getElementById("authForm");
+const authBtn =
+document.getElementById("authSubmit");
+const fullnameField =
+document.getElementById("fullnameField");
 
-  let isLogin = true;
+let isLogin = true;
 
-  profileToggle?.addEventListener("click", (e) => {
-    e.preventDefault();
-    authModal.classList.add("show");
-  });
+profileToggle?.addEventListener("click", (e) => {
+  e.preventDefault();
+  authModal.classList.add("show");
+});
 
-  closeAuth?.addEventListener("click", () => {
+closeAuth?.addEventListener("click", () => {
+  authModal.classList.remove("show");
+});
+
+authModal?.addEventListener("click", (e) => {
+  if (e.target === authModal) {
     authModal.classList.remove("show");
-  });
+  }
+});
 
-  authModal?.addEventListener("click", (e) => {
-    if (e.target === authModal) {
-      authModal.classList.remove("show");
-    }
-  });
+switchAuth?.addEventListener("click", () => {
 
-  switchAuth?.addEventListener("click", () => {
-    isLogin = !isLogin;
+  isLogin = !isLogin;
 
-    authTitle.textContent = isLogin ? "Login" : "Register";
-    authBtn.textContent = isLogin ? "Login" : "Create Account";
-    switchAuth.textContent = isLogin ? "Register" : "Login";
-  });
+  authTitle.textContent =
+    isLogin ? "Login" : "Register";
 
-  authForm?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    alert(isLogin ? "Logged in (demo)" : "Account created (demo)");
-    authModal.classList.remove("show");
-  });
+  authBtn.textContent =
+    isLogin ? "Login" : "Create Account";
 
- 
+  switchAuth.textContent =
+    isLogin ? "Register" : "Login";
+    fullnameField.style.display =
+  isLogin ? "none" : "block";
+
+authBtn.name =
+  isLogin ? "login" : "register";
+  const params =
+new URLSearchParams(window.location.search);
+
+
+});
 
   const categoriesToggle = document.getElementById("categoriesToggle");
   const categoriesMenu = document.getElementById("categoriesMenu");
@@ -116,5 +125,25 @@ document.addEventListener("DOMContentLoaded",() => {
     document.body.appendChild(toast);
     setTimeout(() => toast.remove(), 2000);
   }
+  const params = new URLSearchParams(window.location.search);
+
+console.log(params.get("login"));
+
+if(params.get("login") === "1") {
+
+    authModal.classList.add("show");
+
+    isLogin = true;
+
+    authTitle.textContent = "Login";
+
+    authBtn.textContent = "Login";
+
+    authBtn.name = "login";
+
+    switchAuth.textContent = "Register";
+
+    fullnameField.style.display = "none";
+}
 
 });
